@@ -1,0 +1,97 @@
+/* 整体背景颜色和字体颜色 */
+.container {
+    padding: 20rpx;
+    background-color: #f0f0f0;
+    /* 背景色 */
+    font-family: 'Arial', sans-serif;
+}
+
+/* 按钮区域 */
+.button-group {
+    display: flex;
+    justify-content: space-between;  /* 两个按钮均匀分布 */
+    margin-bottom: 20rpx;
+    width: 100%;  /* 让容器的宽度占满父容器 */
+}
+
+/* 按钮样式优化 */
+.switch-container, button {
+    display: flex;
+    justify-content: center;  /* 水平居中 */
+    align-items: center;  /* 垂直居中 */
+    border-radius: 25rpx;  /* 圆角 */
+    background-color: #4CAF50;  /* 按钮背景色 */
+    color: white;  /* 按钮文字颜色 */
+    padding: 12rpx 25rpx;
+    font-size: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* 阴影效果 */
+    flex-grow: 1;  /* 让按钮占据剩余空间并均匀分布 */
+    border-radius: 50px; /* 圆角按钮 */
+}
+
+/* 增加按钮之间的间距 */
+.switch-container {
+    margin-right: 10rpx;  /* 可以调整为适当间距 */
+}
+
+button {
+    margin-left: 10rpx;  /* 可以调整为适当间距 */
+}
+
+/* 消息列表区域 */
+.message-list {
+    height: 80vh;
+    padding: 10rpx;
+    background-color: #fff;
+    /* 消息区域背景色 */
+    border-radius: 8rpx;
+    /* 圆角 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+}
+
+/* 每条消息的卡片样式 */
+.message-item {
+    margin-bottom: 15rpx;
+    padding: 15rpx;
+    background-color: #fff;
+    /* 消息卡片背景色 */
+    border-radius: 12rpx;
+    /* 圆角 */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    /* 阴影效果 */
+    display: flex;
+    flex-direction: column;
+    gap: 8rpx;
+}
+
+/* 消息卡片中的时间和消息内容 */
+.message-item text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    /* 消息文字颜色 */
+}
+
+.message-item .timestamp {
+    font-size: 12px;
+    color: #999;
+    /* 时间显示更浅 */
+}
+
+button {
+    margin-left: 15rpx;
+    /* 设置按钮之间的间距 */
+}
+.message-count {
+    position: fixed;
+    bottom: 20rpx;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #007BFF;  /* 设置文字颜色 */
+    background-color: #f9f9f9;  /* 背景色 */
+    padding: 10rpx;
+    border-top: 1px solid #ccc;  /* 顶部边框 */
+}

@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="button-group">
+        <view class="switch-container">
+            <text>显示消息</text>
+            <switch checked="{{isDisplaying}}" bindchange="onToggleDisplay" />
+        </view>
+        <button bindtap="clearMessages">清空消息</button>
+    </view>
+    <scroll-view class="message-list" scroll-y scroll-top="{{scrollTop}}">
+        <view wx:for="{{messages}}" wx:key="*this" class="message-item">
+            <text class="timestamp">{{item.timestamp}}</text>
+            <text>{{item.index}}: {{item.message}}</text>
+        </view>
+    </scroll-view>
+    <!-- 显示消息条数 -->
+    <view class="message-count">
+        <text>消息条数: {{messages.length}}</text>
+    </view>
+</view>

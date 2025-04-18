@@ -1,0 +1,36 @@
+<view class="container">
+    <!-- 状态显示 -->
+    <view class="status-bar">
+        <text class="status-text">🛸 无人机状态：{{ status }}</text>
+        <text class="battery">🔋 {{ battery }}%</text>
+    </view>
+
+    <!-- 方向控制区 -->
+    <view class="joystick-area" wx:if="{{isFlying}}">
+        <button class="direction-btn">↑</button>
+        <view class="horizontal-buttons">
+            <button class="direction-btn">←</button>
+            <button class="direction-btn">→</button>
+        </view>
+        <button class="direction-btn">↓</button>
+    </view>
+
+    <!-- 功能控制区 -->
+    <view class="function-buttons">
+        <button class="main-btn" bindtap="handleTakeoff" style="background: {{isFlying ? '#ff4d4f' : '#07c160'}};">
+            {{isFlying ? '🛑 降落' : '🚀 起飞'}}
+            <slot wx:if="{{loading}}"><i class="loading-dot">.</i><i class="loading-dot">.</i><i class="loading-dot">.</i></slot>
+        </button>
+        <button class="emergency-btn" bindtap="handleEmergency" wx:if="{{isFlying}}">⚠️ 紧急停止</button>
+    </view>
+
+
+
+
+
+
+
+
+
+
+</view>

@@ -1,0 +1,38 @@
+<!-- index.wxml -->
+<scroll-view class="scrollarea" scroll-y type="list">
+    <view class="container">
+        <!-- 三元组计算参数 -->
+        <view>
+            <view class="product-key-view" style="flex-direction: row;">
+                <text class="product-key-text">ProductKey:</text>
+                <input data-field="productKey" class="product-key-input" type="text" placeholder="" bindinput="handleInputMqttParameters" value="{{productKey}}" />
+            </view>
+            <view class="product-key-view" style="flex-direction: row;">
+                <text class="product-key-text">DeviceName:</text>
+                <input data-field="deviceName" class="product-key-input" type="text" placeholder="" bindinput="handleInputMqttParameters" value="{{deviceName}}" />
+            </view>
+            <view class="product-key-view" style="flex-direction: row;">
+                <text class="product-key-text">DeviceSecret:</text>
+                <input class="product-key-input" type="text" placeholder="" bindinput="handleInputMqttParameters" value="{{deviceSecret}}" />
+            </view>
+            <!-- 连接断开 -->
+            <view class="product-key-view" style="flex-direction: row;">
+                <button data-field="deviceSecret" class="mqtt-connect-button" type="{{isConnected ? 'warn' : 'primary'}}" size="default" bind:tap="toggleMqttConnection" style="background-color: {{buttonColor}}">
+                    {{isConnected ? '断开' : '连接'}}
+                </button>
+            </view>
+        </view>
+        <!-- 调试控制界面 -->
+        <view class="debug-control-buttons" wx:if="{{isConnected}}">
+            <button bindtap="navigateToDebugPage">调试界面</button>
+            <button bindtap="navigateToControlPage">控制页面</button>
+        </view>
+        <view class="debug-control-buttons" wx:if="{{isConnected}}">
+            <button bindtap="navigateToAttitudePage">参数界面</button>
+        </view>
+        <!-- end of container -->
+    </view>
+    <view class="connection-status {{isConnected ? 'connected' : 'disconnected'}}">
+        {{isConnected ? '已连接' : '未连接'}}
+    </view>
+</scroll-view>
